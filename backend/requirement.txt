@@ -1,0 +1,6 @@
+Flask
+face-recognition
+numpy
+Pillow
+Flask-Cors
+cloudinary
