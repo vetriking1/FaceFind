@@ -9,10 +9,12 @@ from concurrent.futures import ThreadPoolExecutor
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
-import tempfile
 import io
 import uuid
 from urllib.request import urlopen
+import dotenv
+
+dotenv.load_dotenv()
 
 print("API initializing...")
 
@@ -21,9 +23,9 @@ CORS(app)
 
 # Cloudinary Configuration
 cloudinary.config(
-    cloud_name="....",
-    api_key="....",
-    api_secret="...."
+    cloud_name=os.getenv("CLOUD_NAME"),
+    api_key=os.getenv("API_KEY"),
+    api_secret=os.getenv("API_SECRET")
 )
 
 # Configuration
